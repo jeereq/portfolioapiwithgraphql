@@ -11,6 +11,11 @@ const app = express();
 app.use(bodyParser.json());
 
 app.use(is_auth);
+
+app.get("/", (req, res, next) => {
+	res.send("<h1>hello world</h1>");
+});
+
 app.use("/graphql", graphqlHttp({ schema, graphiql: true }));
 
 mongoose
