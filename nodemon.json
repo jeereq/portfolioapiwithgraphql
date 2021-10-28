@@ -1,8 +1,0 @@
-{
-	"env": {
-		"MONGO_USER": "jeereq",
-		"MONGO_PASSWORD": "mj13111999",
-		"MONGO_DB": "portfolio",
-		"PORT": 8000
-	}
-}
