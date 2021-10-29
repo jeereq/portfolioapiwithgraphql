@@ -28,7 +28,7 @@ const workType = new GraphQLObjectType({
 		_id: { type: GraphQLID },
 		link: { type: new GraphQLNonNull(GraphQLString) },
 		name: { type: new GraphQLNonNull(GraphQLString) },
-		description: { type: new GraphQLNonNull(GraphQLString) },
+		description: { type: GraphQLString },
 		imageLink: { type: new GraphQLNonNull(GraphQLString) },
 		id_user: { type: GraphQLID },
 		user: {
@@ -48,7 +48,7 @@ const userType = new GraphQLObjectType({
 		firstname: { type: new GraphQLNonNull(GraphQLString) },
 		email: { type: new GraphQLNonNull(GraphQLString) },
 		password: { type: new GraphQLNonNull(GraphQLString) },
-		description: { type: new GraphQLNonNull(GraphQLString) },
+		description: { type: GraphQLString },
 		links: { type: new GraphQLList(linkedType) },
 		competences: {
 			type: new GraphQLList(competenceType),

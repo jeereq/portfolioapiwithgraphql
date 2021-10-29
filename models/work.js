@@ -7,7 +7,8 @@ const workSchema = new Schema({
 	},
 	description: {
 		type: String,
-		required: true
+		required: true,
+		default: ""
 	},
 	link: {
 		type: String,
