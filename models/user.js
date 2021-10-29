@@ -43,7 +43,7 @@ userSchema.statics.login = async function ({ email, password }) {
 	if (verify)
 		return new Promise((resolve, reject) => {
 			const token = createToken(user._id);
-			resolve({ ...user._doc, token, _id: null, password: null });
+			resolve({ ...user._doc, token, password: null });
 		});
 	throw new Error("password incorrecte !!!");
 };

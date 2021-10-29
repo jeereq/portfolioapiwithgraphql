@@ -19,6 +19,8 @@ app.get("/", (req, res, next) => {
 
 app.use("/graphql", graphqlHttp({ schema, graphiql: true }));
 
+//mongodb://localhost:27017/portfolio-developpement
+
 mongoose
 	.connect(
 		`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.w82cr.mongodb.net/${process.env.MONGO_DB}?retryWrites=true&w=majority`,
