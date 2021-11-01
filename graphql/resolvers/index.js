@@ -106,6 +106,13 @@ module.exports = new GraphQLSchema({
 					});
 				}
 			},
+			deleteWork: {
+				type: new GraphQLNonNull(workType),
+				args: { id: { type: GraphQLID } },
+				resolve(parent, args) {
+					return Work.findByIdAndDelete(args.id);
+				}
+			},
 			createWork: {
 				type: new GraphQLNonNull(workType),
 				args: {
@@ -125,6 +132,18 @@ module.exports = new GraphQLSchema({
 						.catch((err) => {
 							throw err;
 						});
+				}
+			},
+			createCompetence: {
+				type: new GraphQLNonNull(competenceType),
+				args: {
+					name: { type: new GraphQLNonNull(GraphQLString) },
+					icon: { type: new GraphQLNonNull(GraphQLString) },
+					id_user: { type: GraphQLID }
+				},
+				resolve(parent, args) {
+					const competence = new Competence(args);
+					return competence.save();
 				}
 			},
 			createMessage: {
